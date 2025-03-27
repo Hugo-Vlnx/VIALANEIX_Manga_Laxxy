@@ -14,6 +14,7 @@ $manga = $dbPDO->prepare("
 $manga->execute();
 $mangas = $manga->fetchAll();
 echo "<h1>"."Top Manga"."</h1>";
+
    
     
 
@@ -29,10 +30,10 @@ echo "<h1>"."Top Manga"."</h1>";
 </head>
 <body>
 <ul>
-<?php foreach($mangas as $m): ?>
+<?php foreach($mangas as $m):?>
                     
                         <li>
-                            <a><?= htmlspecialchars($m['Titre']) ?></a>
+                            <a href='manga.php?id=$id'><?= htmlspecialchars($m['Titre']) ?></a>
                             </br>
                             <p> <?= htmlspecialchars($m['Date_Publication']) ?></p>
 
